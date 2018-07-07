@@ -67,7 +67,8 @@ var range = function(x, y) {
   if (y - x === 1 || y - x === 0) {  // base case
     return [];
   }
-   return x * range(x + 1, y)
+  y = y > x ? y - 1 : y + 1
+  return y === x ? [] : range(x,y).concat(y); // recursive case
 
 };
 /*******************************************************************/
